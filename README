@@ -1,50 +1,50 @@
-import java.util.Scanner;
+#include <iostream>
+using namespace std;
 
-public class Calculator {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+int main() {
+    double num1, num2;
+    char op;
+    double result;
 
-   // Input two numbers
-        System.out.print("Enter first number: ");
-        double num1 = sc.nextDouble();
+    // Input two numbers
+    cout << "Enter first number: ";
+    cin >> num1;
 
-  System.out.print("Enter second number: ");
-        double num2 = sc.nextDouble();
+    cout << "Enter second number: ";
+    cin >> num2;
 
-  // Choose operation
-        System.out.println("Choose operation: +  -  *  /");
-        char op = sc.next().charAt(0);
+    // Choose operation
+    cout << "Choose operation: +  -  *  / : ";
+    cin >> op;
 
-   double result;
+    switch (op) {
+        case '+':
+            result = num1 + num2;
+            cout << "Result = " << result;
+            break;
 
-   switch (op) {
-            case '+':
-                result = num1 + num2;
-                System.out.println("Result = " + result);
-                break;
-     case '-':
-                result = num1 - num2;
-                System.out.println("Result = " + result);
-                break;
+        case '-':
+            result = num1 - num2;
+            cout << "Result = " << result;
+            break;
 
-   case '*':
-                result = num1 * num2;
-                System.out.println("Result = " + result);
-                break;
+        case '*':
+            result = num1 * num2;
+            cout << "Result = " << result;
+            break;
 
-   case '/':
-                if (num2 != 0) {
-                    result = num1 / num2;
-                    System.out.println("Result = " + result);
-                } else {
-                    System.out.println("Error: Cannot divide by zero");
-                }
-                break;
+        case '/':
+            if (num2 != 0) {
+                result = num1 / num2;
+                cout << "Result = " << result;
+            } else {
+                cout << "Error: Cannot divide by zero";
+            }
+            break;
 
-   default:
-                System.out.println("Invalid operator");
-        }
-
-   sc.close();
+        default:
+            cout << "Invalid operator";
     }
+
+    return 0;
 }
